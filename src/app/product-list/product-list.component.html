@@ -1,0 +1,24 @@
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
+<h2>Products</h2>
+
+<!-- *ngFor is a structural directive i.e. manipulates the DOM -->
+<div *ngFor="let product of products">
+  <h3>
+    <!-- property binding syntax [title] -->
+    <a [title]="product.name + ' details'">
+      {{product.name}}
+    </a>
+  </h3>
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+  <!-- event binding syntax (click) -->
+  <button (click)="share()">Share</button>
+  <!-- share() method is defined in product-list-component.ts -->
+</div>
+
+
