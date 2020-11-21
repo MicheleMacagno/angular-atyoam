@@ -6,10 +6,13 @@ can be found in the LICENSE file at https://angular.io/license
 <h2>Products</h2>
 
 <!-- *ngFor is a structural directive i.e. manipulates the DOM -->
-<div *ngFor="let product of products">
+<div *ngFor="let product of products; index as productId">
   <h3>
     <!-- property binding syntax [title] -->
-    <a [title]="product.name + ' details'">
+    <a
+      [title]="product.name + ' details'"
+      [routerLink]="['/products', productId]"
+    >
       {{product.name}}
     </a>
   </h3>
