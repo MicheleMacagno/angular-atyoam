@@ -19,6 +19,8 @@ can be found in the LICENSE file at https://angular.io/license
   <!-- event binding syntax (click) -->
   <button (click)="share()">Share</button>
   <!-- share() method is defined in product-list-component.ts -->
+
+  <!-- using a child component defined in product-alerts -->
+  <app-product-alerts [product]="product" (notify)="onNotify()">
+  </app-product-alerts>
 </div>
-
-
